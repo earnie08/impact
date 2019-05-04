@@ -1,0 +1,41 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#SignUp-Container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+#SignUp-Form {
+  display: flex;
+  width: 100%;
+  background: rgb(112, 221, 255);
+  background: linear-gradient(
+    139deg,
+    rgba(112, 221, 255, 1) 0%,
+    rgba(3, 122, 255, 0.8745018026741946) 49%,
+    rgba(47, 159, 247, 0.8801040435705532) 100%
+  );
+  justify-self: center;
+  align-self: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.CategoryTabs {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.buttonStuff {
+  width: 30%;
+}
