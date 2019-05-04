@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>Social Workers</h1>
+    </div>
+    <div id="map"></div>
+    <script>
+        var map;
+        var json;
+        
+        function load(){
+            json = '[{"name":"John", "data":"2019-05-04", "location":[47.6205, -122.3493], "image_url":"https://upload.wikimedia.org/wikipedia/commons/a/a5/Seattle_Space_Needle_Dusk.jpg"},{"name":"Earnie", "data":"2019-05-04", "location":[47.655548, -122.303200], "image_url":"https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/08/04135423/suzzallo-night-TILE.jpg"}]'
+            //json = $.getJSON( "data.json");
+            
+            var data = JSON.parse(json);
+            for (var i = 0; i < data.length; i++) { 
+                console.log(data);
+                createMarkers(data[i])
+            }
+        }
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 47.6205, lng: -122.3493},
+                zoom: 8
+            });
+            load()
+        }
+
+        function createMarkers(sw){
+            var LatLng = new google.maps.LatLng(sw.location[0], sw.location[1]);
+        
+            var marker = new google.maps.Marker({
+                position: LatLng,
+                title: sw.name
+            });
+
+            // To add the marker to the map, call setMap();
+            marker.addListener('click', function() {
+                createInfo(sw).open(map, marker);
+            });
+
+            marker.setMap(map);
+        }
+
+        function createInfo(info){
+            var contentString =
+            '<div style="width=100px;">'+
+                '<h1>' + info.name + '</h1>'+
+                '<h1>' + info.date + '</h1>'+
+                '<img style="width = 100%;" src="' + info.image_url + '"/>'+
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            
+            return infowindow
+        }
+        
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiakmfjgPL_ib5fsUPa9Baa-34Rl0-1Tk&callback=initMap" async defer></script>
+  </body>
+</html>
