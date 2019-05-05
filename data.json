@@ -3,24 +3,42 @@
         "name":"John",
         "date":"2019-05-04",
         "location":[47.6205, -122.3493],
-        "image_url": "/images/test.jpg"
+        "image_url": "images/test.jpg"
     },
     {
-        "name":"Earnie",
-        "date":"2019-05-04",
+        "name":"John",
+        "date":"2019-05-03",
         "location":[47.6205, -122.3493],
-        "image_url": "/images/test.jpg"
+        "image_url": "images/test.jpg"
     },
     {
-        "name":"Andrew",
-        "date":"2019-05-04",
-        "location":[47.6205, -122.3493],
-        "image_url": "/images/test.jpg"
+        "name":"John",
+        "date":"2019-05-02",
+        "location":[47.6805, -122.3493],
+        "image_url": "images/test.jpg"
     },
     {
-        "name":"Andrew",
+        "name":"Elsa",
         "date":"2019-05-04",
-        "location":[47.6205, -122.3493],
-        "image_url": "/images/test.jpg"
+        "location":[47.655548, -122.303200],
+        "image_url": "images/test.jpg"
+    },
+    {
+        "name":"Elsa",
+        "date":"2019-05-01",
+        "location":[47.355548, -122.303200],
+        "image_url": "images/test.jpg"
+    },
+    {
+        "name":"Tony",
+        "date":"2019-05-01",
+        "location":[47.155548, -122.303200],
+        "image_url": "images/test.jpg"
+    },
+    {
+        "name":"Tony",
+        "date":"2019-05-02",
+        "location":[47.955548, -122.303200],
+        "image_url": "images/test.jpg"
     }
 ]
